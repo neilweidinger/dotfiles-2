@@ -3,9 +3,10 @@
 # Silence "The default interactive shell is now zsh" message
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Enable git prompt and tab completion
-source ~/.git-completion.bash
-source ~/.git-prompt.sh
+# Enable git bash completion
+source ~/.nix-profile/share/git/contrib/completion/git-completion.bash
+# Enable git prompt
+source ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
 
 # See below for git-prompt options
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
@@ -37,5 +38,5 @@ export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle 
                          --bind 'ctrl-g:top' \
                          --bind 'ctrl-e:execute(echo {+} | xargs -o nvim)+abort'"
 
-# Source FZF bash key bindings and completion
-source ~/.fzf.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
