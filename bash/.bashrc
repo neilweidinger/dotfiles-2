@@ -7,21 +7,17 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
 
-# Colors!
-green="\[\033[0;32m\]"
-blue="\[\033[0;34m\]"
-purple="\[\033[0;35m\]"
-cyan="\[\033[0;96m\]"
-orange="\[\033[38;5;208m\]"
-color="\[\033[38;2;251;126;20m\]"  # rgb color code
-reset="\[\033[0m\]"
-
+# See below for git-prompt options
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+export GIT_PS1_DESCRIBE_STYLE=branch
+export GIT_PS1_SHOWCOLORHINTS=1
 export GIT_PS1_SHOWDIRTYSTATE=1
-# '\u' adds the name of the current user to the prompt
-# '\$(__git_ps1)' adds git-related stuff
-# '\W' adds the name of the current directory
-lambda="λ"
-export PS1="$purple\u$green\$(__git_ps1)$cyan \W $orange$lambda $reset"
+export GIT_PS1_SHOWSTASHSTATE=1
+
+# Bash prompt generator sites:
+# https://bash-prompt-generator.org/
+# https://robotmoon.com/bash-prompt-generator/
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;39m\]\u\[\e[38;5;45m\]@\[\e[38;5;51m\]\h \W${PS1_CMD1}\[\e[96m\] \[\e[0m\]$? \[\e[38;5;208m\]λ \[\e[0m\]'
 
 # Use nvim for man pages
 export MANPAGER='nvim +Man!'
