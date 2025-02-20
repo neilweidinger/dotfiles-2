@@ -16,7 +16,4 @@ $ stow -t ~/ <package>
 ```
 
 # Installing fonts
-- Unfortunately MacOS doesn't seem to like symlinks inside of `~/Library/Fonts`, so we can't use Stow and an actual file must be placed in that location instead for the font to be made available.
-```
-$ cp -v fonts/<font> ~/Library/Fonts/
-```
+- Just manually install [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) (these fonts add up to a quarter GiB, and I don't want to check that into this repo)
