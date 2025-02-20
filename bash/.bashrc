@@ -18,7 +18,8 @@ export GIT_PS1_SHOWSTASHSTATE=1
 # Bash prompt generator sites:
 # https://bash-prompt-generator.org/
 # https://robotmoon.com/bash-prompt-generator/
-PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;39m\]\u\[\e[38;5;45m\]@\[\e[38;5;51m\]\h \W${PS1_CMD1}\[\e[96m\] \[\e[0m\]$? \[\e[38;5;208m\]λ \[\e[0m\]'
+PROMPT_DIRTRIM=2
+PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;39m\]\u\[\e[38;5;45m\]@\[\e[38;5;51m\]\h \[\e[38;5;124m\]\w\[\e[0m\]${PS1_CMD1}\[\e[96m\] \[\e[0m\]$? \[\e[38;5;208m\]λ \[\e[0m\]'
 
 # Use nvim for man pages
 export MANPAGER='nvim +Man!'
