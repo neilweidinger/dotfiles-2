@@ -29,9 +29,10 @@ export MANWIDTH=999
 export EDITOR="nvim"
 
 # Aliases
+alias cat="bat"
 alias diff="delta -s"
 alias less="less -i -R"
-alias cat="bat"
+alias ls="lsd -1"
 
 # FZF settings
 export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle \
