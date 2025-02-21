@@ -1,14 +1,14 @@
 # Dotfiles-2
 
 ## Changing default shell to Nix-installed Bash
-- First add `bash` installed through current Nix profile to `/etc/shells`
+1. First add `bash` installed through current Nix profile to `/etc/shells`
     - Edit file using `$ sudo nvim /etc/shells`
     - Add `/users/neilweidinger/.nix-profile/bin/bash`
-- Change shell using `$ chsh -s /users/neilweidinger/.nix-profile/bin/bash`
+2. Change shell using `$ chsh -s /users/neilweidinger/.nix-profile/bin/bash`
     - Terminal/tmux/mac (probably) need to be restarted for change to take effect
 
 ## Using Stow
-- Make sure to run `stow` commands from root of dotfiles directory (alternatively use `-d` flag)
+Make sure to run `stow` commands from root of dotfiles directory (alternatively use `-d` flag to specify stow directory). We use `-t` to specify the target directory, just to be explicit.
 - Use `-n` for dry-run
 - Use `-v` or `--verbose[=n]` (0-5) for more output
 
