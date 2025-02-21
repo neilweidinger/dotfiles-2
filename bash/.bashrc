@@ -36,7 +36,7 @@ alias bath="bat --plain --language=help" # Pipe help text into `bath` for nice c
 alias cat="bat"
 alias diff="delta -s"
 alias less="less -i -R"
-alias ls="lsd -1"
+alias ls="lsd --oneline --group-dirs=first"
 
 # FZF settings
 export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle \
