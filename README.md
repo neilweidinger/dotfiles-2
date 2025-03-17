@@ -1,5 +1,12 @@
 # Dotfiles-2
 
+## Nix
+1. Install Nix using [Determinate installer](https://github.com/DeterminateSystems/nix-installer)
+2. Install Nix package into profile:
+```
+$ nix profile install . # from dotfiles-2 directory
+```
+
 ## Changing default shell to Nix-installed Bash
 1. First add `bash` installed through current Nix profile to `/etc/shells`
     - Edit file using `$ sudo nvim /etc/shells`
