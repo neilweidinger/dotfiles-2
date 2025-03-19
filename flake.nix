@@ -21,6 +21,7 @@
         git
         gnumake
         htop
+        hyperfine
         imagemagick
         include-what-you-use
         jdk
