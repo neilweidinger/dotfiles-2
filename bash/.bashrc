@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Silence "The default interactive shell is now zsh" message
+# Silence "The default interactive shell is now zsh" message on Mac
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Don't include commands prefixed with space in history
