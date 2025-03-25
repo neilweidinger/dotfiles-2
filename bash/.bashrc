@@ -35,11 +35,25 @@ export EDITOR="nvim"
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 
 # Aliases
-alias bath="bat --plain --language=help" # Pipe help text into `bath` for nice colors
-alias cat="bat"
-alias diff="delta -s"
-alias less="less -i -R"
-alias ls="lsd --oneline --group-dirs=first"
+alias bath='bat --plain --language=help' # Pipe help text into `bath` for nice colors
+alias cat='bat'
+alias diff='delta -s'
+alias less='less -i'
+alias ls='lsd --oneline --group-dirs=first'
+alias sc='/Applications/SelfControl.app/Contents/MacOS/selfcontrol-cli'
+alias scr='sc is-running 2>&1 | awk '\''{print $NF}'\'
+
+# Functions
+scb() {
+    local -r blocklist_dir='/Users/neilweidinger/Documents/Personal/selfcontrol'
+    local blocklist
+    blocklist=$(find $blocklist_dir -type f | fzf)
+
+    local timestamp
+    timestamp=$(printf "+15M\n+30M\n+1H\n+2H\n+3H\n+8H" | fzf | xargs -I{} date -v "{}" -Iseconds)
+
+    sc start --blocklist "$blocklist" --enddate "$timestamp"
+}
 
 # FZF settings
 export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle \
