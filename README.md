@@ -1,5 +1,10 @@
 # Dotfiles-2
 
+## TODO
+- Git
+- Neovim
+- Yazi
+
 ## Nix
 1. Install Nix using [Determinate installer](https://github.com/DeterminateSystems/nix-installer)
 2. Install Nix package into profile:
