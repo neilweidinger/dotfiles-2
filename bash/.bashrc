@@ -45,14 +45,36 @@ alias scr='sc is-running 2>&1 | awk '\''{print $NF}'\'
 
 # Functions
 scb() {
+    # Set trap to handle Ctrl+C (SIGINT)
+    trap 'echo -e "\nOperation cancelled by user"; return 1' INT
+
     local -r blocklist_dir='/Users/neilweidinger/Documents/Personal/selfcontrol'
     local blocklist
     blocklist=$(find $blocklist_dir -type f | fzf)
 
-    local timestamp
-    timestamp=$(printf "+15M\n+30M\n+1H\n+2H\n+3H\n+8H" | fzf | xargs -I{} date -v "{}" -Iseconds)
+    # Check if user canceled fzf with Ctrl+C
+    if [[ $? -ne 0 ]]; then
+        echo "Selection cancelled"
+        return 1
+    fi
 
+    local duration
+    duration=$(printf "+15M\n+30M\n+1H\n+2H\n+3H\n+8H" | fzf)
+
+    # Check if user canceled fzf with Ctrl+C
+    if [[ $? -ne 0 ]]; then
+        echo "Selection cancelled"
+        return 1
+    fi
+
+    local timestamp
+    timestamp=$(date -v "$duration" -Iseconds)
+
+    echo "Starting SelfControl with blocklist: $blocklist, until: $timestamp"
     sc start --blocklist "$blocklist" --enddate "$timestamp"
+
+    # Reset trap
+    trap - INT
 }
 
 # FZF settings
