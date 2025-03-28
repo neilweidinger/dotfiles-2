@@ -1,0 +1,5 @@
+[core]
+    editor = nvim
+[user]
+    name = Neil Weidinger
+    email = neilweidingern@gmail.com
