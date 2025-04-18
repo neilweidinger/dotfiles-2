@@ -33,14 +33,17 @@
         neovim
         ninja
         poppler_utils
+        # py-spy
         python3
         rclone
         restic
         ripgrep
+        samply
         scc
         shellcheck
         stow
         tmux
+        uv
         yazi
       ];
     };
