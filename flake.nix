@@ -1,51 +1,15 @@
 {
-  description = "Neil's first flake";
+  description = "Neil's nix-darwin flake";
 
-  inputs.nixpkgs.url = "nixpkgs";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+  };
 
-  outputs = { self, nixpkgs }: {
-    packages."aarch64-darwin".default = let
-      pkgs = nixpkgs.legacyPackages."aarch64-darwin";
-    in pkgs.buildEnv {
-      name = "home-packages";
-      paths = with pkgs; [
-        bashInteractive
-        bat
-        clang-tools
-        cmakeCurses
-        curl
-        delta
-        ffmpeg
-        fzf
-        gcc
-        git
-        gnumake
-        htop
-        hyperfine
-        imagemagick
-        include-what-you-use
-        jdk
-        jq
-        lsd
-        maven
-        ncdu
-        neofetch
-        neovim
-        ninja
-        poppler_utils
-        # py-spy
-        python3
-        rclone
-        restic
-        ripgrep
-        samply
-        scc
-        shellcheck
-        stow
-        tmux
-        uv
-        yazi
-      ];
+  outputs = inputs@{ self, nix-darwin, nixpkgs }: {
+    darwinConfigurations."Neils-MacBook-Air-2" = nix-darwin.lib.darwinSystem {
+      modules = [ ./nix/configuration.nix ./nix/system-defaults.nix ];
     };
   };
 }
