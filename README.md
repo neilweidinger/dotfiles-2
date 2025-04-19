@@ -25,8 +25,8 @@ Make sure to run `stow` commands from root of dotfiles directory (alternatively 
 - Use `-v` or `--verbose[=n]` (0-5) for more output
 
 ```
-$ stow -t ~/ -n -v <package> # dry-run
-$ stow -t ~/ <package>
+$ stow -t ~/ -d stow -n -v alacritty # dry-run
+$ stow -t ~/ -d stow alacritty
 ```
 
 ## Installing fonts
