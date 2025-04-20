@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
     # py-spy
+    _1password-cli
     bashInteractive
     bat
     clang-tools
@@ -38,8 +39,17 @@
     yazi
   ];
 
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
+  programs.bash.completion.enable = true;
+
+  system.defaults = {
+    finder.AppleShowAllExtensions = true;
+    finder.FXEnableExtensionChangeWarning = false;
+    finder.FXPreferredViewStyle = "clmv";
+    finder.ShowPathbar = true;
+    NSGlobalDomain.InitialKeyRepeat = 25;
+    NSGlobalDomain.KeyRepeat = 2;
+    dock.autohide = true;
+  };
 
   # Set Git commit hash for darwin-version.
   system.configurationRevision = config.rev or config.dirtyRev or null;
@@ -48,6 +58,13 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 6;
 
-  # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  # Necessary for using flakes on this system.
+  nix.settings.experimental-features = "nix-command flakes";
+
+  nixpkgs = {
+    hostPlatform = "aarch64-darwin";
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "1password-cli"
+    ];
+  };
 }

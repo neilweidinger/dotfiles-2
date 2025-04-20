@@ -7,9 +7,9 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 HISTCONTROL=ignorespace
 
 # Enable git bash completion
-source ~/.nix-profile/share/git/contrib/completion/git-completion.bash
+source $(dirname $(readlink -f $(which git)))/../share/git/contrib/completion/git-completion.bash
 # Enable git prompt
-source ~/.nix-profile/share/git/contrib/completion/git-prompt.sh
+source $(dirname $(readlink -f $(which git)))/../share/git/contrib/completion/git-prompt.sh
 
 # See below for git-prompt options
 # https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
