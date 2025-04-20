@@ -41,22 +41,24 @@
 
   programs.bash.completion.enable = true;
 
-  system.defaults = {
-    finder.AppleShowAllExtensions = true;
-    finder.FXEnableExtensionChangeWarning = false;
-    finder.FXPreferredViewStyle = "clmv";
-    finder.ShowPathbar = true;
-    NSGlobalDomain.InitialKeyRepeat = 25;
-    NSGlobalDomain.KeyRepeat = 2;
-    dock.autohide = true;
+  system = {
+    defaults = {
+      NSGlobalDomain.InitialKeyRepeat = 25;
+      NSGlobalDomain.KeyRepeat = 2;
+      dock.autohide = true;
+      finder.AppleShowAllExtensions = true;
+      finder.FXEnableExtensionChangeWarning = false;
+      finder.FXPreferredViewStyle = "clmv";
+      finder.ShowPathbar = true;
+    };
+
+    # Set Git commit hash for darwin-version.
+    configurationRevision = config.rev or config.dirtyRev or null;
+
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
+    stateVersion = 6;
   };
-
-  # Set Git commit hash for darwin-version.
-  system.configurationRevision = config.rev or config.dirtyRev or null;
-
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-  system.stateVersion = 6;
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
