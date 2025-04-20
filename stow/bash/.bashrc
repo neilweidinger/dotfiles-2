@@ -77,6 +77,13 @@ scb() {
     trap - INT
 }
 
+# Don't send analytics to homebrew
+# https://docs.brew.sh/Analytics
+export HOMEBREW_NO_ANALYTICS=1
+
+# Activate homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # FZF settings
 export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle \
                          --margin=4%,2% --prompt='λ ' --info=inline \

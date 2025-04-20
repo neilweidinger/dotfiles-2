@@ -39,6 +39,32 @@
     yazi
   ];
 
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "zap";
+    brews = [];
+    casks = [
+      "alacritty"
+      "daisydisk"
+      "keepingyouawake"
+      "mullvadvpn"
+      "protonvpn"
+      "selfcontrol"
+      "transmission"
+      "whatsapp"
+      "zoom"
+      # 1password
+      # alfred
+      # chrome
+      # ice/onlyswitch
+      # iina
+      # intellij
+      # monitorcontrol
+      # obsidian
+      # rectangle
+    ];
+  };
+
   programs.bash.completion.enable = true;
 
   system = {

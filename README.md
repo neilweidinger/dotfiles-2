@@ -12,6 +12,14 @@ $ nix flake update # update the flake lock file
 $ darwin-rebuild switch --flake . # rebuild our system configuration using our flake
 ```
 
+## Brew
+1. Install `brew` following the instructions on the [homepage](https://brew.sh/)
+2. Nix will now take care of installing formulae and casks according to what we configure
+
+Note: there does appear to be
+[`nix-homebrew`](https://github.com/zhaofengli/nix-homebrew), but it seems
+pretty heavy-handed and I'd rather just install brew manually.
+
 ## Changing default shell to Nix-installed Bash
 1. First add `bash` installed through Nix profile to `/etc/shells`
     - Edit file using `$ sudo nvim /etc/shells`
