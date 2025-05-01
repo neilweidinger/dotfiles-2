@@ -1,5 +1,6 @@
 [alias]
     dag = log --graph --all --format=format:'%C(auto)%h%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d %C(white)%s%C(reset) %C(dim white)- %an'
+    sw = "!f() { branch=$(git branch --list --format='%(refname:short)' | fzf --height 40% --reverse); if [ -n \"$branch\" ]; then git checkout \"$branch\"; fi }; f"
 [core]
     editor = nvim
 [user]
