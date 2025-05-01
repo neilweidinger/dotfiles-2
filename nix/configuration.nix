@@ -42,25 +42,24 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "zap";
-    brews = [];
+    brews = [ ];
     casks = [
+      "1password"
       "alacritty"
       "daisydisk"
-      "keepingyouawake"
+      "iina"
+      "jetbrains-toolbox"
       "mullvadvpn"
+      "obsidian"
       "protonvpn"
       "selfcontrol"
       "transmission"
       "whatsapp"
       "zoom"
-      # 1password
       # alfred
       # chrome
       # ice/onlyswitch
-      # iina
-      # intellij
       # monitorcontrol
-      # obsidian
       # rectangle
     ];
   };
@@ -91,8 +90,7 @@
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
-    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-      "1password-cli"
-    ];
+    config.allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [ "1password-cli" ];
   };
 }
