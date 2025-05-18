@@ -4,6 +4,7 @@
     _1password-cli
     bashInteractive
     bat
+    btop
     clang-tools
     cmakeCurses
     curl
