@@ -30,6 +30,8 @@
     rclone
     restic
     ripgrep
+    rsync
+    rustup
     samply
     scc
     shellcheck
@@ -37,6 +39,7 @@
     tmux
     uv
     yazi
+    yq-go
   ];
 
   homebrew = {
@@ -49,6 +52,7 @@
       "daisydisk"
       "iina"
       "jetbrains-toolbox"
+      "monitorcontrol"
       "mullvadvpn"
       "obsidian"
       "protonvpn"
@@ -57,10 +61,9 @@
       "whatsapp"
       "zoom"
       # alfred
+      # aerospace/amethyst/rectangle - something for window management
       # chrome
       # ice/onlyswitch
-      # monitorcontrol
-      # rectangle
     ];
   };
 
@@ -83,6 +86,10 @@
     # Used for backwards compatibility, please read the changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 6;
+
+    # Seems to be required by `nix-darwin` as some kind of transition phase
+    # https://nix-darwin.github.io/nix-darwin/manual/index.html#opt-system.primaryUser
+    primaryUser = "neilweidinger";
   };
 
   # Necessary for using flakes on this system.
