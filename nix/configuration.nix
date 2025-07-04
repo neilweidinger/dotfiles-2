@@ -59,6 +59,7 @@
       "protonvpn"
       "selfcontrol"
       "transmission"
+      "utm"
       "whatsapp"
       "zoom"
       # alfred
