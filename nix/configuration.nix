@@ -55,6 +55,7 @@
       "daisydisk"
       "iina"
       "jetbrains-toolbox"
+      "keepingyouawake"
       "monitorcontrol"
       "mullvadvpn"
       "obsidian"
