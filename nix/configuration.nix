@@ -9,6 +9,7 @@
     cmakeCurses
     curl
     delta
+    dive
     ffmpeg
     fzf
     gcc
@@ -41,6 +42,7 @@
     uv
     yazi
     yq-go
+    yt-dlp
   ];
 
   homebrew = {
