@@ -7,9 +7,12 @@
     btop
     clang-tools
     cmakeCurses
+    colima
     curl
     delta
     dive
+    docker
+    docker-compose
     ffmpeg
     fzf
     gcc
