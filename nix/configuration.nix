@@ -30,7 +30,7 @@
     neofetch
     neovim
     ninja
-    poppler_utils
+    poppler-utils
     python3
     rclone
     restic
