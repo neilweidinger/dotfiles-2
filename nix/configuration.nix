@@ -58,6 +58,7 @@
       "daisydisk"
       "iina"
       "jetbrains-toolbox"
+      "jordanbaird-ice"
       "keepingyouawake"
       "monitorcontrol"
       "mullvadvpn"
@@ -71,7 +72,6 @@
       # alfred
       # aerospace/amethyst/rectangle - something for window management
       # chrome
-      # ice/onlyswitch
     ];
   };
 
