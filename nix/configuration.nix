@@ -65,9 +65,11 @@
       "obsidian"
       "protonvpn"
       "selfcontrol"
+      "sf-symbols"
       "transmission"
       "utm"
       "whatsapp"
+      "xcodes"
       "zoom"
       # alfred
       # aerospace/amethyst/rectangle - something for window management
