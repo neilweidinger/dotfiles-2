@@ -1,11 +1,11 @@
 { config, pkgs, lib, ... }: {
   environment.systemPackages = with pkgs; [
-    # py-spy
     _1password-cli
     bashInteractive
     bat
     btop
     clang-tools
+    claude-code-bin
     cmakeCurses
     colima
     curl
@@ -108,6 +108,6 @@
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [ "1password-cli" ];
+      builtins.elem (lib.getName pkg) [ "1password-cli" "claude-code-bin" ];
   };
 }
