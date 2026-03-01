@@ -7,9 +7,16 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin }: {
-    darwinConfigurations."Neils-MacBook-Air-2" = nix-darwin.lib.darwinSystem {
-      modules = [ ./nix/configuration.nix ];
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nix-darwin,
+    }:
+    {
+      darwinConfigurations."Neils-MacBook-Air-2" = nix-darwin.lib.darwinSystem {
+        modules = [ ./nix/configuration.nix ];
+      };
+      formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixfmt-tree;
     };
-  };
 }

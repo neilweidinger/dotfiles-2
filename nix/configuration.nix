@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
     _1password-cli
     bashInteractive
@@ -107,7 +113,11 @@
 
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
-    config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [ "1password-cli" "claude-code-bin" ];
+    config.allowUnfreePredicate =
+      pkg:
+      builtins.elem (lib.getName pkg) [
+        "1password-cli"
+        "claude-code-bin"
+      ];
   };
 }
