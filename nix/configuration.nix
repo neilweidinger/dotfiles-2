@@ -17,24 +17,20 @@
     colima
     curl
     delta
+    difftastic
     dive
     docker
     docker-compose
     fd
     ffmpeg
     fzf
-    gcc
     git
-    gnumake
     htop
     hyperfine
     imagemagick
-    include-what-you-use
-    jdk
     jless
     jq
     lsd
-    maven
     ncdu
     neovim
     ninja

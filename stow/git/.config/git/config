@@ -1,8 +1,37 @@
 [alias]
+    commitf = commit --fixup
     dag = log --graph --all --format=format:'%C(auto)%h%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d %C(white)%s%C(reset) %C(dim white)- %an'
     sw = "!f() { branch=$(git branch --list --format='%(refname:short)' | fzf --height 40% --reverse); if [ -n \"$branch\" ]; then git checkout \"$branch\"; fi }; f"
+
+    # Difftastic aliases
+    logd = -c diff.external=difft log --ext-diff
+    showd = -c diff.external=difft show --ext-diff
+    diffd = -c diff.external=difft diff
 [core]
     editor = nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    hyperlinks = true
+    line-numbers = true
+    navigate = true    # use n and N to move between diff sections
+    side-by-side = true
+[diff]
+    algorithm = histogram
+    colorMoved = zebra
+    colorMovedWS = allow-indentation-change
+    mnemonicPrefix = true
+    renames = copies
+[fetch]
+    prune = true
+[merge]
+    conflictStyle = zdiff3
+[rebase]
+    autoSquash = true
+[rerere]
+    enabled = true
+    autoUpdate = true
 [user]
     name = Neil Weidinger
     email = neilweidingern@gmail.com
