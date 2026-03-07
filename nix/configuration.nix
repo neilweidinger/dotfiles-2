@@ -40,6 +40,7 @@
     python3
     rclone
     restic
+    restic-browser
     ripgrep
     rsync
     rustup
