@@ -105,3 +105,15 @@ export FZF_DEFAULT_OPTS="--height=40% --multi --border --layout=reverse --cycle 
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+# Source secrets
+ENV_SECRETS=~/secrets/env_secrets
+if [[ -f "$ENV_SECRETS" ]]; then
+    source "$ENV_SECRETS"
+fi
+
+# Claude
+# https://openrouter.ai/docs/guides/guides/coding-agents/claude-code-integration#step-2-connect-claude-to-openrouter
+export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
+export ANTHROPIC_API_KEY="" # Important: Must be explicitly empty
