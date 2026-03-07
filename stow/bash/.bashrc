@@ -77,6 +77,16 @@ scb() {
     trap - INT
 }
 
+# yazi wrapper
+# https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+function yazi() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    command yazi "$@" --cwd-file="$tmp"
+    IFS= read -r -d '' cwd < "$tmp"
+    [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}
+
 # Don't send analytics to homebrew
 # https://docs.brew.sh/Analytics
 export HOMEBREW_NO_ANALYTICS=1

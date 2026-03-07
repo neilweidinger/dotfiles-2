@@ -1,0 +1,4 @@
+[mgr]
+prepend_keymap = [
+    { on = ["g", "p"], run = "cd ~/Documents/Programming", desc = "Cd to ~/Documents/Programming" },
+]
