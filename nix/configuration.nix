@@ -7,6 +7,7 @@
 {
   environment.systemPackages = with pkgs; [
     _1password-cli
+    bandwhich
     bashInteractive
     bat
     btop
@@ -19,6 +20,7 @@
     dive
     docker
     docker-compose
+    fd
     ffmpeg
     fzf
     gcc
@@ -29,14 +31,16 @@
     imagemagick
     include-what-you-use
     jdk
+    jless
     jq
     lsd
     maven
     ncdu
-    neofetch
     neovim
     ninja
+    ouch
     poppler-utils
+    procs
     python3
     rclone
     restic
@@ -48,6 +52,7 @@
     shellcheck
     stow
     tmux
+    trippy
     uv
     yazi
     yq-go
