@@ -31,6 +31,7 @@
     jless
     jq
     lsd
+    mitmproxy
     ncdu
     neovim
     ninja
@@ -51,6 +52,7 @@
     tmux
     trippy
     uv
+    wireshark
     yazi
     yq-go
     yt-dlp
