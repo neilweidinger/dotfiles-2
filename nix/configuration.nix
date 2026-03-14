@@ -7,6 +7,7 @@
 {
   environment.systemPackages = with pkgs; [
     _1password-cli
+    ast-grep
     bandwhich
     bashInteractive
     bat
@@ -35,6 +36,7 @@
     ncdu
     neovim
     ninja
+    numbat
     ouch
     poppler-utils
     procs
