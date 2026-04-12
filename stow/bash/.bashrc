@@ -38,7 +38,7 @@ export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p
 alias bath='bat --plain --language=help' # Pipe help text into `bath` for nice colors
 alias cat='bat'
 alias diff='delta -s'
-alias less='less -i'
+alias less='less -i -R'
 alias ls='lsd --oneline --group-dirs=first'
 alias pgrep='echo "Use \`pprocs\` instead!"'
 alias pprocs='procs --only Pid --no-header'
