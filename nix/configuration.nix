@@ -13,7 +13,7 @@
     bat
     btop
     clang-tools
-    claude-code-bin
+    claude-code
     cmakeCurses
     colima
     curl
@@ -124,6 +124,7 @@
       pkg:
       builtins.elem (lib.getName pkg) [
         "1password-cli"
+        "claude-code"
         "claude-code-bin"
       ];
   };
