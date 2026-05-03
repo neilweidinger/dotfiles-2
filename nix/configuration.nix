@@ -51,6 +51,7 @@
     scc
     shellcheck
     stow
+    thunderbird
     tmux
     trippy
     uv
