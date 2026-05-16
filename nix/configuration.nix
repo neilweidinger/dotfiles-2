@@ -57,6 +57,7 @@
     uv
     wireshark
     yazi
+    vlc-bin
     yq-go
     yt-dlp
   ];
