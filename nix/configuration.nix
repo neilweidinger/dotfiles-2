@@ -70,6 +70,7 @@
       "1password"
       "alacritty"
       "daisydisk"
+      "handbrake"
       "iina"
       "jetbrains-toolbox"
       "jordanbaird-ice"
@@ -77,7 +78,6 @@
       "monitorcontrol"
       "mullvadvpn"
       "obsidian"
-      "protonvpn"
       "selfcontrol"
       "sf-symbols"
       "transmission"
@@ -87,7 +87,6 @@
       "zoom"
       # alfred
       # aerospace/amethyst/rectangle - something for window management
-      # chrome
     ];
   };
 
