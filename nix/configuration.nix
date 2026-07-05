@@ -118,6 +118,14 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Workaround for https://github.com/nix-darwin/nix-darwin/issues/1817
+  # nixpkgs-unstable removed `nixos-render-docs`'s `--toc-depth` flag before
+  # nix-darwin adapted, breaking the manual build. Disabling documentation
+  # (and the uninstaller, which evaluates its own doc-enabled sub-system)
+  # sidesteps it. Remove once PR #1818 lands upstream.
+  documentation.enable = false;
+  system.tools.darwin-uninstaller.enable = false;
+
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config.allowUnfreePredicate =
