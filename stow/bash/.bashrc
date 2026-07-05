@@ -112,8 +112,8 @@ if [[ -f "$ENV_SECRETS" ]]; then
     source "$ENV_SECRETS"
 fi
 
-# Claude
+# Claude (API-usage billing through openrouter - alternatively comment this out and login with Claude for account-based billing)
 # https://openrouter.ai/docs/guides/guides/coding-agents/claude-code-integration#step-2-connect-claude-to-openrouter
-export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
-export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"
-export ANTHROPIC_API_KEY="" # Important: Must be explicitly empty
+# export ANTHROPIC_BASE_URL="https://openrouter.ai/api"
+# export ANTHROPIC_AUTH_TOKEN="$OPENROUTER_API_KEY"  # specified in ENV_SECRETS
+# export ANTHROPIC_API_KEY="" # Important: Must be explicitly empty
