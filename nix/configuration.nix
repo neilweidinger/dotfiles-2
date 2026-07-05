@@ -50,6 +50,7 @@
     samply
     scc
     shellcheck
+    snitch
     stow
     thunderbird
     tmux
