@@ -126,6 +126,10 @@
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
+  # Automatically garbage collect and hard-link identical store files
+  nix.gc.automatic = true;
+  nix.optimise.automatic = true;
+
   # Workaround for https://github.com/nix-darwin/nix-darwin/issues/1817
   # nixpkgs-unstable removed `nixos-render-docs`'s `--toc-depth` flag before
   # nix-darwin adapted, breaking the manual build. Disabling documentation
