@@ -39,6 +39,7 @@
     ouch
     poppler-utils
     procs
+    py-spy
     python3
     rclone
     restic
