@@ -145,6 +145,13 @@
   nix.gc.automatic = true;
   nix.optimise.automatic = true;
 
+  # Enable Touch ID for sudo
+  security.pam.services.sudo_local = {
+    touchIdAuth = true;
+    watchIdAuth = true;
+    reattach = true;
+  };
+
   nixpkgs = {
     hostPlatform = "aarch64-darwin";
     config.allowUnfreePredicate =
