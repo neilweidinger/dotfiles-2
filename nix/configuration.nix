@@ -104,6 +104,11 @@
   # the repo.
   fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
+  # Register the Nix-installed bash in /etc/shells so it's a valid login shell.
+  # This removes the manual step of editing /etc/shells; `chsh` is still a
+  # one-time manual command (see README).
+  environment.shells = [ pkgs.bashInteractive ];
+
   programs.bash.completion.enable = true;
 
   system = {

@@ -21,11 +21,13 @@ Note: there does appear to be
 pretty heavy-handed and I'd rather just install brew manually.
 
 ## Changing default shell to Nix-installed Bash
-1. First add `bash` installed through Nix profile to `/etc/shells`
-    - Edit file using `$ sudo nvim /etc/shells`
-    - Append `/run/current-system/sw/bin/bash`
-2. Change shell using `$ chsh -s /run/current-system/sw/bin/bash`
-    - Terminal/tmux/mac (probably) need to be restarted for change to take effect
+`/etc/shells` is managed declaratively via `environment.shells` in
+`nix/configuration.nix`, so after a `darwin-rebuild switch` the Nix bash is
+already a valid login shell. Just set it once:
+```bash
+$ chsh -s /run/current-system/sw/bin/bash
+```
+- Terminal/tmux/mac (probably) need to be restarted for change to take effect
 
 ## Using Stow
 We use `-t` to specify the target directory, just to be explicit. We use `-d`,
