@@ -32,7 +32,6 @@
     jless
     jq
     lsd
-    mitmproxy
     ncdu
     neovim
     ninja
@@ -65,7 +64,15 @@
 
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    # Homebrew 6.0 removed the `--force-cleanup` flag that nix-darwin still emits
+    # for onActivation.cleanup = "uninstall"/"zap" (see nix-darwin modules/homebrew.nix,
+    # added by PR #1789). Until upstream switches to HB6 flags, keep cleanup = "none"
+    # so that flag isn't emitted, and supply the correct flags ourselves via extraFlags
+    # (appended verbatim to `brew bundle`): `--cleanup` enables cleanup during install,
+    # `--zap` zaps casks instead of uninstalling, and `--force` skips HB6's interactive
+    # "Do you want to proceed with the cleanup?" prompt. Drop all once nix-darwin is fixed.
+    onActivation.cleanup = "none";
+    onActivation.extraFlags = [ "--cleanup" "--zap" "--force" ];
     brews = [ ];
     casks = [
       "1password"
