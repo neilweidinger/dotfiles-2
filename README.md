@@ -40,6 +40,3 @@ For example:
 $ stow -t ~/ -d stow -n -v alacritty # dry-run
 $ stow -t ~/ -d stow alacritty
 ```
-
-## Installing fonts
-- Just manually install [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) (these fonts add up to a quarter GiB, and I don't want to check that into this repo)

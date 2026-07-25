@@ -98,6 +98,12 @@
     ];
   };
 
+  # Manage the terminal font declaratively. nixpkgs ships nerd-fonts as
+  # per-family packages, so this pulls in just JetBrainsMono (a few MB) rather
+  # than the whole ~quarter-GiB Nerd Fonts bundle, and nothing is checked into
+  # the repo.
+  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+
   programs.bash.completion.enable = true;
 
   system = {
