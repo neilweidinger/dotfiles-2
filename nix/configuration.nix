@@ -74,8 +74,6 @@
     # zaps casks instead of uninstalling. Drop all once nix-darwin is fixed.
     onActivation.cleanup = "none";
     onActivation.extraFlags = [ "--force-cleanup" "--zap" ];
-    # Refresh Homebrew and upgrade outdated casks on each rebuild, so casks stay
-    # current instead of pinning to whatever version was first installed.
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     brews = [ ];
@@ -103,10 +101,7 @@
     ];
   };
 
-  # Manage the terminal font declaratively. nixpkgs ships nerd-fonts as
-  # per-family packages, so this pulls in just JetBrainsMono (a few MB) rather
-  # than the whole ~quarter-GiB Nerd Fonts bundle, and nothing is checked into
-  # the repo.
+  # Manage the terminal font declaratively
   fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
 
   # Register the Nix-installed bash in /etc/shells so it's a valid login shell.
