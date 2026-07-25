@@ -73,6 +73,10 @@
     # "Do you want to proceed with the cleanup?" prompt. Drop all once nix-darwin is fixed.
     onActivation.cleanup = "none";
     onActivation.extraFlags = [ "--cleanup" "--zap" "--force" ];
+    # Refresh Homebrew and upgrade outdated casks on each rebuild, so casks stay
+    # current instead of pinning to whatever version was first installed.
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
     brews = [ ];
     casks = [
       "1password"
