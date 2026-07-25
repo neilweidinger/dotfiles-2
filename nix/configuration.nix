@@ -73,7 +73,10 @@
     # now-deprecated `--cleanup`, which also subsumes the old `--force`), and `--zap`
     # zaps casks instead of uninstalling. Drop all once nix-darwin is fixed.
     onActivation.cleanup = "none";
-    onActivation.extraFlags = [ "--force-cleanup" "--zap" ];
+    onActivation.extraFlags = [
+      "--force-cleanup"
+      "--zap"
+    ];
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
     brews = [ ];
