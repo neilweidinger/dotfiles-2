@@ -25,6 +25,7 @@
     fd
     ffmpeg
     fzf
+    ghostty-bin
     git
     htop
     hyperfine
