@@ -27,6 +27,7 @@
     fzf
     ghostty-bin
     git
+    herdr
     htop
     hyperfine
     imagemagick
