@@ -113,7 +113,6 @@
   # This removes the manual step of editing /etc/shells; `chsh` is still a
   # one-time manual command (see README).
   environment.shells = [ pkgs.bashInteractive ];
-
   programs.bash.completion.enable = true;
 
   system = {
@@ -139,18 +138,23 @@
     primaryUser = "neilweidinger";
   };
 
-  # Necessary for using flakes on this system.
-  nix.settings.experimental-features = "nix-command flakes";
+  nix = {
+    # Necessary for using flakes on this system.
+    settings.experimental-features = "nix-command flakes";
 
-  # Automatically garbage collect and hard-link identical store files.
-  # `--delete-older-than 30d` prunes system/home generations older than 30 days
-  # so their store paths become collectable; without it, bare nix-collect-garbage
-  # only frees paths unreachable from any gcroot (and every generation is a
-  # gcroot), so old generations would never be reclaimed. Keeps 30 days of
-  # rollback history.
-  nix.gc.automatic = true;
-  nix.gc.options = "--delete-older-than 10d";
-  nix.optimise.automatic = true;
+    gc = {
+      # Automatically garbage collect and hard-link identical store files.
+      # `--delete-older-than 30d` prunes system/home generations older than 30 days
+      # so their store paths become collectable; without it, bare nix-collect-garbage
+      # only frees paths unreachable from any gcroot (and every generation is a
+      # gcroot), so old generations would never be reclaimed. Keeps 30 days of
+      # rollback history.
+      automatic = true;
+      options = "--delete-older-than 10d";
+    };
+
+    optimise.automatic = true;
+  };
 
   # Enable Touch ID for sudo
   security.pam.services.sudo_local = {
