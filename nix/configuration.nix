@@ -63,21 +63,11 @@
 
   homebrew = {
     enable = true;
-    # nix-darwin's onActivation.cleanup = "uninstall"/"zap" emits flags that don't
-    # match Homebrew 6's `brew bundle` (see nix-darwin modules/homebrew.nix, PR #1789).
-    # Until upstream switches to HB6 flags, keep cleanup = "none" so nothing is emitted,
-    # and supply the correct flags ourselves via extraFlags (appended verbatim to
-    # `brew bundle`, which defaults to the `install` subcommand): `--force-cleanup`
-    # performs cleanup after install without prompting (the HB6 replacement for the
-    # now-deprecated `--cleanup`, which also subsumes the old `--force`), and `--zap`
-    # zaps casks instead of uninstalling. Drop all once nix-darwin is fixed.
-    onActivation.cleanup = "none";
-    onActivation.extraFlags = [
-      "--force-cleanup"
-      "--zap"
-    ];
-    onActivation.autoUpdate = true;
-    onActivation.upgrade = true;
+    onActivation = {
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "zap";
+    };
     brews = [ ];
     casks = [
       "1password"
