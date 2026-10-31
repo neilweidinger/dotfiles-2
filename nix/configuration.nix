@@ -12,9 +12,7 @@
     bashInteractive
     bat
     btop
-    clang-tools
     claude-code
-    cmakeCurses
     colima
     curl
     delta
@@ -36,8 +34,6 @@
     lsd
     ncdu
     neovim
-    ninja
-    numbat
     ouch
     poppler-utils
     procs
@@ -85,7 +81,7 @@
     brews = [ ];
     casks = [
       "1password"
-      "alacritty"
+      "claude"
       "daisydisk"
       "handbrake-app"
       "iina"
@@ -96,11 +92,9 @@
       "mullvad-vpn"
       "obsidian"
       "selfcontrol"
-      "sf-symbols"
       "transmission"
       "utm"
       "whatsapp"
-      "xcodes-app"
       "zoom"
       # alfred
       # aerospace/amethyst/rectangle - something for window management
