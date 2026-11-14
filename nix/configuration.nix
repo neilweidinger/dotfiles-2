@@ -72,6 +72,7 @@
     casks = [
       "1password"
       "claude"
+      "cold-turkey-blocker"
       "daisydisk"
       "handbrake-app"
       "iina"
